@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap");
+
+@import "reset.css";
+@import "variables.css";
+
+/* animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+  }
+
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+  }
+
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* root */
+body {
+  background-color: #3f4567;
+  color: #c4ab62;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+.showing {
+  display: flex !important;
+  animation: fadeIn 0.5s linear forwards;
+}
+
+.hiding {
+  display: flex;
+  animation: fadeOut 0.5s linear forwards;
+}
+
+.showing__content {
+  display: flex !important;
+  flex-direction: column;
+  animation: fadeInDown 2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.hiding__content {
+  display: flex !important;
+  flex-direction: column;
+  animation: fadeOutUp 1s ease-in-out forwards;
+}
+
+/* flex */
+
+.main__container,
+.main__column,
+.main__row,
+.content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  width: 100%;
+  background-color: #3f4567;
+  z-index: 1;
+}
+
+/* flex-column */
+
+.main__column,
+.content__container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__column {
+  width: 90%;
+}
+
+.main__content {
+  display: none;
+  width: 100%;
+  overflow: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+  z-index: -1;
+}
+
+.main__content::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.main__content::-webkit-scrollbar-thumb {
+  background-color: var(--dim-white);
+  border-radius: 1rem;
+}
+
+.content__container {
+  background-color: var(--dim-white);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  color: white;
+  line-height: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* content */
+
+.header__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.header__title:hover {
+  cursor: pointer;
+}
+
+.header__question {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.content__line {
+  display: none;
+  width: 100%;
+  color: var(--dim-white);
+}
+
+.zoom-in {
+  display: flex !important;
+  animation: zoomIn 0.5s linear;
+}
+
+.zoom-out {
+  display: flex !important;
+  animation: zoomOut 1s linear forwards;
+  animation-delay: 1s;
+}
+
+.content__title {
+  font-size: 1rem;
+}
+
+.content__body {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* mobile */
+
+@media screen and (max-width: 676px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header__title {
+    font-size: 2.5rem;
+  }
+}
