@@ -43,6 +43,7 @@ function handleClick(){
 
 function init() {
     title.addEventListener("click", handleClick);
+    guide.addEventListener("click", handleClick);
 }
 
 init();

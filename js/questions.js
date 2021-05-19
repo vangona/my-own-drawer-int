@@ -1,4 +1,5 @@
 const title = document.querySelector(".header__title"),
+    guide = document.querySelector(".header__guide"),
     questions = document.querySelector(".header__question");
 
 const HIDING_CN = "hiding",
@@ -26,6 +27,7 @@ function handleClick() {
 
 function init(){
     title.addEventListener("click", handleClick);
+    guide.addEventListener("click", handleClick);
 }
 
 init();
