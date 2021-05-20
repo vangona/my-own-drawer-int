@@ -1,7 +1,6 @@
 const body = document.body,
     content = document.querySelector(".main__content"),
     nav = document.querySelector(".nav__container"),
-    home = document.querySelector(".button__home"),
     contentLine = document.querySelector(".content__line"),
     SHOWING_CON = "showing__content",
     HIDING_CON = "hiding__content",

@@ -1,6 +1,8 @@
 const contentTitles = document.querySelectorAll(".content__title"),
     navs = document.querySelectorAll(".nav-box"),
     homeButtons = document.querySelectorAll(".button__home"),
+    leftButtons = document.querySelectorAll(".button__left"),
+    rightButtons = document.querySelectorAll(".button__right"),
     summary = document.getElementById("summary").parentNode,
     concept = document.getElementById("concept").parentNode,
     explain = document.getElementById("explain").parentNode,
@@ -35,6 +37,20 @@ function handleHomeClick() {
     window.scrollTo({top:0, behavior:'smooth'});
 }
 
+function handleLeftArrow(event) {
+    const clickedLeftArrow = event.target.parentNode.parentNode;
+    if (clickedLeftArrow.id !== "content__1") {
+        window.scrollTo({top:clickedLeftArrow.previousElementSibling.offsetTop -vh, behavior:"smooth"});
+    }
+}
+
+function handleRightArrow(event) {
+    const clickedRightArrow = event.target.parentNode.parentNode;
+    if (clickedRightArrow.id !== "content__4") {
+        window.scrollTo({top:clickedRightArrow.nextElementSibling.offsetTop -vh, behavior:"smooth"});
+    }
+}
+
 function resizeHandle() {
     vh = 0.01 * window.innerHeight;
 }
@@ -61,6 +77,14 @@ function init() {
         button.addEventListener("click", handleHomeClick);
     });
 
+    leftButtons.forEach(function(leftbutton){
+        leftbutton.addEventListener("click", handleLeftArrow);
+    })
+
+    rightButtons.forEach(function(leftbutton){
+        leftbutton.addEventListener("click", handleRightArrow);
+    })
+    
     // document.addEventListener("scroll", handleScroll);
 
     window.addEventListener("resize", resizeHandle);

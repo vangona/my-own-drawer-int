@@ -439,16 +439,27 @@ body::-webkit-scrollbar-thumb,
   font-weight: 400;
 }
 
-.button__home {
+.button__container {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
+}
+
+.button__scroll {
   width: 3rem;
   height: 3rem;
   background-color: transparent;
   color: var(--white);
   border: none;
   font-size: 1.5rem;
+}
+
+.button__scroll:hover {
+  cursor: pointer;
+}
+
+.button__scroll > i {
+  pointer-events: none;
 }
 
 /* mobile */
