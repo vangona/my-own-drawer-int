@@ -174,6 +174,62 @@
   }
 }
 
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* root */
 body {
   background-color: #3f4567;
@@ -182,11 +238,13 @@ body {
   overflow: hidden;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.content__container::-webkit-scrollbar {
   width: 0.5rem;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.content__container::-webkit-scrollbar-thumb {
   background-color: var(--dim-white);
   border-radius: 0.25rem;
 }
@@ -213,6 +271,16 @@ body::-webkit-scrollbar-thumb {
   animation: fadeOutUp 1s ease-in-out forwards;
 }
 
+.showing__nav {
+  display: flex !important;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hiding__nav {
+  display: flex !important;
+  animation: fadeOutDown 1.5s linear forwards;
+}
+
 .none {
   display: none;
 }
@@ -222,7 +290,8 @@ body::-webkit-scrollbar-thumb {
 .main__container,
 .main__column,
 .main__row,
-.content-box {
+.content-box,
+.nav__container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,13 +339,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .content__container {
+  position: relative;
   background-color: var(--dim-white);
   border: 1px solid var(--white);
   border-radius: 10px;
   height: 100vh;
+  overflow: auto;
   color: white;
   line-height: 1.5rem;
   padding: 2rem;
+  padding-bottom: 5rem;
   margin-bottom: 1rem;
 }
 
@@ -311,8 +383,32 @@ body::-webkit-scrollbar-thumb {
   font-style: italic;
 }
 
+.nav__container {
+  display: none;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.nav-box {
+  font-size: 0.9rem;
+  padding: 1rem 1.3rem;
+  background-color: var(--dim-white);
+  transform: skewX(-10deg);
+  border-right: 1px solid var(--white);
+  color: white;
+}
+
+.nav-box:hover {
+  cursor: pointer;
+}
+
+.nav-box:last-child {
+  border-right: none;
+}
+
 .content__line {
   display: none;
+  margin-top: 0;
   width: 100%;
   color: var(--dim-white);
 }
@@ -341,6 +437,18 @@ body::-webkit-scrollbar-thumb {
   font-size: 1.1rem;
   line-height: 170%;
   font-weight: 400;
+}
+
+.button__home {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  font-size: 1.5rem;
 }
 
 /* mobile */
