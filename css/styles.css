@@ -179,6 +179,16 @@ body {
   background-color: #3f4567;
   color: #c4ab62;
   font-family: "Nanum Myeongjo", serif;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--dim-white);
+  border-radius: 0.25rem;
 }
 
 .showing {
@@ -247,7 +257,7 @@ body {
   overflow: auto;
   padding: 1rem;
   margin-top: 1rem;
-  z-index: -1;
+  z-index: 0;
 }
 
 .main__content::-webkit-scrollbar {
@@ -263,6 +273,7 @@ body {
   background-color: var(--dim-white);
   border: 1px solid var(--white);
   border-radius: 10px;
+  height: 100vh;
   color: white;
   line-height: 1.5rem;
   padding: 2rem;
@@ -318,11 +329,17 @@ body {
 }
 
 .content__title {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content__title:hover {
+  cursor: pointer;
 }
 
 .content__body {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
+  line-height: 170%;
   font-weight: 400;
 }
 
