@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap");
-
 @import "reset.css";
 @import "variables.css";
 
@@ -343,12 +341,13 @@ body::-webkit-scrollbar-thumb,
   background-color: var(--dim-white);
   border: 1px solid var(--white);
   border-radius: 10px;
-  height: 100vh;
+  height: fit-content;
+  max-height: 100vh;
   overflow: auto;
   color: white;
   line-height: 1.5rem;
   padding: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -440,9 +439,12 @@ body::-webkit-scrollbar-thumb,
 }
 
 .button__container {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  position: relative;
+  margin-left: auto;
+  margin-top: 1rem;
+  width: fit-content;
+  bottom: 0;
+  right: 0;
 }
 
 .button__scroll {
@@ -451,7 +453,7 @@ body::-webkit-scrollbar-thumb,
   background-color: transparent;
   color: var(--white);
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .button__scroll:hover {
@@ -470,6 +472,24 @@ body::-webkit-scrollbar-thumb,
   }
 
   .header__title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+
+  .button__scroll {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .button__scroll {
+    font-size: 1rem;
   }
 }
