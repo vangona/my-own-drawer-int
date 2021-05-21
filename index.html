@@ -21,12 +21,16 @@
         <div class="header__box">
           <h1 class="header__title">‘ 나만의 서랍장 ’</h1>
           <span class="header__guide">시작하시려면 제목을 눌러주세요.</span>
-          <textarea
-            class="header__question hiding"
-            placeholder=""
-            spellcheck="false"
-          ></textarea>
+          <div class="header__question__container">
+            <textarea
+              class="header__question"
+              placeholder=""
+              spellcheck="false"
+            ></textarea>
+            <!-- <button class="answer__button">답하기</button> -->
+          </div>
           <nav class="nav__container">
+            <div class="nav-box nav__answer">답변</div>
             <div class="nav-box nav__summary">요약</div>
             <div class="nav-box nav__concept">컨셉</div>
             <div class="nav-box nav__explain">설명</div>
@@ -36,16 +40,8 @@
         </div>
         <div id="main__content" class="main__content">
           <div id="content__1" class="content__container">
-            <h3 id="summary" class="content__title">0. 요약</h3>
+            <h3 id="answer" class="content__title">나의 답변</h3>
             <div class="content__body">
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              nesciunt, ratione cumque minima, voluptatum vero inventore quos
-              odit, quasi eius tempora quis error saepe beatae perspiciatis?
-              Alias doloremque quod quaerat. <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              nesciunt, ratione cumque minima, voluptatum vero inventore quos
-              odit, quasi eius tempora quis error saepe beatae perspiciatis?
-              Alias doloremque quod quaerat. <br />
               - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
               nesciunt, ratione cumque minima, voluptatum vero inventore quos
               odit, quasi eius tempora quis error saepe beatae perspiciatis?
@@ -80,26 +76,27 @@
             </div>
           </div>
           <div id="content__2" class="content__container">
-            <h3 id="concept" class="content__title">1. 컨셉 및 비전</h3>
+            <h3 id="summary" class="content__title">요약</h3>
             <div class="content__body">
-              - 스스로 생각을 정리할 수 있도록 질문 <br />
-              - 스스로의 이해를 돕되 스스로에게 갇히지 않을 수 있도록 <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              sed distinctio et quis asperiores praesentium dolores odio
-              cupiditate iste, id tempore ex unde facere nostrum, animi
-              assumenda mollitia dolorum impedit? <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              sed distinctio et quis asperiores praesentium dolores odio
-              cupiditate iste, id tempore ex unde facere nostrum, animi
-              assumenda mollitia dolorum impedit? <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              sed distinctio et quis asperiores praesentium dolores odio
-              cupiditate iste, id tempore ex unde facere nostrum, animi
-              assumenda mollitia dolorum impedit? <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              sed distinctio et quis asperiores praesentium dolores odio
-              cupiditate iste, id tempore ex unde facere nostrum, animi
-              assumenda mollitia dolorum impedit? <br />
+              <p>
+                1) 혼자 생각을 정리하거나, 질문에 답을 달면 스스로에게
+                빠져들게되고, <br />그런 시간들은 자칫 고통스러워 질 수
+                있습니다.
+              </p>
+              <p>
+                2) 그래서 사람들의 글과, 사진, 질문을 모아 책으로 엮었습니다.<br />
+                스스로 자신의 생각을 정리하되, 스스로를 가두지 않도록 말입니다.
+              </p>
+              <p>
+                3) 제작자는 심리상담을 전공하였고,<br />
+                나만의 서랍장은 2019년도 1839 청년창업 지원에 선정되었습니다.
+              </p>
+
+              <p>
+                4) '생각정리를 위한, 나만의 서랍장' 텀블벅 펀딩을 성공적으로
+                마쳤습니다.
+              </p>
+              행복하시면 좋겠습니다. <br />
             </div>
             <div class="button__container">
               <button class="button__left button__scroll">
@@ -114,6 +111,26 @@
             </div>
           </div>
           <div id="content__3" class="content__container">
+            <h3 id="concept" class="content__title">1. 컨셉 및 비전</h3>
+            <div class="content__body">
+              <p>
+                우리는 생각보다 우리 스스로를 모릅니다. 그러니 항상 알아가고자
+                노력합니다.
+              </p>
+            </div>
+            <div class="button__container">
+              <button class="button__left button__scroll">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="button__home button__scroll">
+                <i class="fas fa-home"></i>
+              </button>
+              <button class="button__right button__scroll">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div id="content__4" class="content__container">
             <h3 id="explain" class="content__title">2. 설명</h3>
             <div class="content__body">
               내부 설명<br />
@@ -152,25 +169,13 @@
               </button>
             </div>
           </div>
-          <div id="content__4" class="content__container">
+          <div id="content__5" class="content__container">
             <h3 id="career" class="content__title">3. 경력 및 기록</h3>
             <div class="content__body">
-              - 심리상담 전공<br />
-              - 2018년도 1839 청년창업 지원사업 선정<br />
-              - 생각 정리를 위한 공간, 나만의 서랍장 운영(코로나로 휴업)<br />
-              - 텀블벅 펀딩 성공 <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, fugit eius quidem quam aut quae eaque eveniet
-              provident tenetur, esse doloribus molestias, explicabo vel impedit
-              laborum sequi maiores quos autem. <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, fugit eius quidem quam aut quae eaque eveniet
-              provident tenetur, esse doloribus molestias, explicabo vel impedit
-              laborum sequi maiores quos autem. <br />
-              - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, fugit eius quidem quam aut quae eaque eveniet
-              provident tenetur, esse doloribus molestias, explicabo vel impedit
-              laborum sequi maiores quos autem. <br />
+              <p>- 심리상담 전공</p>
+              <p>- 2018년도 1839 청년창업 지원사업 선정</p>
+              <p>- 생각 정리를 위한 공간, 나만의 서랍장 운영(코로나로 휴업)</p>
+              <p>- 텀블벅 '생각 정리를 위한, 나만의 서랍장' 펀딩 성공</p>
             </div>
             <div class="button__container">
               <button class="button__left button__scroll">
@@ -199,7 +204,7 @@
     <script src="js/questions.js"></script>
     <script src="js/music.js"></script>
     <script src="js/content-slide.js"></script>
-    <script src="js/scroll.js"></script>
+    <script src="js/fadein.js"></script>
     <script src="js/textarea.js"></script>
   </body>
 </html>

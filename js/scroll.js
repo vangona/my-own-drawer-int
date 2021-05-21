@@ -18,16 +18,15 @@ function handleTitleClick(event){
 
 function handleNavClick(navEvent) {
     if (content.classList.contains(SHOWING_CON)) {
-        if (navEvent.target.classList.contains("nav__summary")){
+        if (navEvent.target.classList.contains("nav__answer")){
+            window.scrollTo({top:answer.offsetTop -vh, behavior:'smooth'});
+        } else if (navEvent.target.classList.contains("nav__summary")){
             window.scrollTo({top:summary.offsetTop -vh, behavior:'smooth'});
         } else if (navEvent.target.classList.contains("nav__concept")){
-            console.log(navEvent.target)
             window.scrollTo({top:concept.offsetTop -vh, behavior:'smooth'});
         } else if (navEvent.target.classList.contains("nav__explain")){
-            console.log(navEvent.target)
             window.scrollTo({top:explain.offsetTop -vh, behavior:'smooth'});
         } else if (navEvent.target.classList.contains("nav__career")){
-            console.log(navEvent.target)
             window.scrollTo({top:career.offsetTop -vh, behavior:'smooth'});
         }
     } 
@@ -39,14 +38,14 @@ function handleHomeClick() {
 
 function handleLeftArrow(event) {
     const clickedLeftArrow = event.target.parentNode.parentNode;
-    if (clickedLeftArrow.id !== "content__1") {
+    if (clickedLeftArrow != contentBoxes[0]) {
         window.scrollTo({top:clickedLeftArrow.previousElementSibling.offsetTop -vh, behavior:"smooth"});
     }
 }
 
 function handleRightArrow(event) {
     const clickedRightArrow = event.target.parentNode.parentNode;
-    if (clickedRightArrow.id !== "content__4") {
+    if (clickedRightArrow.id !== contentBoxes[contentBoxes.length - 1]) {
         window.scrollTo({top:clickedRightArrow.nextElementSibling.offsetTop -vh, behavior:"smooth"});
     }
 }

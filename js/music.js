@@ -2,7 +2,7 @@ const myaudio = document.querySelector("audio"),
     PLAYING_CN = "playing"
 
 let vol = 0,
-    volInterval = 150;
+    volInterval = 100;
 
 function fadeOut () {
     const fadeout = setInterval(function() {
@@ -15,7 +15,7 @@ function fadeOut () {
                 clearInterval(fadeout);
             }
         }
-    }, 100);
+    }, volInterval);
 }
 
 function fadeIn () {
