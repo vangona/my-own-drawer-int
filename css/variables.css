@@ -1,4 +1,6 @@
 :root {
   --dim-white: rgba(255, 255, 255, 0.2);
   --white: rgba(255, 255, 255, 0.5);
+  --gold: #c4ab62;
+  --dim-gold: rgba(196, 171, 98, 0.7);
 }

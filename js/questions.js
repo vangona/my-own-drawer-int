@@ -6,9 +6,9 @@ const HIDING_CN = "hiding",
     SHOWING_CN = "showing";
 
 const NOVEL_WORDS = [
-    "‘ 구름의 모양이 기억나시나요? ’",
-    "‘ 오늘 하늘은 어떤 색이었나요? ’",
-    "‘ 쫓기고 있나요? ’",
+    "구름의 모양이 기억나시나요?",
+    "오늘 하늘은 어떤 색이었나요?",
+    "쫓기고 있나요?",
 ];
 
 const WORDS_NUMBERS = NOVEL_WORDS.length;
@@ -21,7 +21,7 @@ function handleClick() {
     const randomNumber = Math.floor(Math.random() * WORDS_NUMBERS);
         questions.classList.remove(HIDING_CN);
         questions.classList.add(SHOWING_CN);
-        questions.innerText = NOVEL_WORDS[randomNumber];
+        questions.placeholder = NOVEL_WORDS[randomNumber];
     }
 }
 
