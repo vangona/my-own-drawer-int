@@ -3,7 +3,8 @@ const body = document.body,
     contentBoxes = document.querySelectorAll(".content__container"),
     nav = document.querySelector(".nav__container"),
     contentLine = document.querySelector(".content__line"),
-    answer = document.getElementById("answer").parentNode,
+    boxshadow = "5px 8px 15px 0px rgba(0,0,0,0.79)",
+    // answer = document.getElementById("answer").parentNode,
     SHOWING_CON = "showing__content",
     HIDING_CON = "hiding__content",
     SHOWING_NAV = "showing__nav",
@@ -23,8 +24,9 @@ function handleClick(){
         guide.classList.remove(NONE);
         contentBoxes.forEach(function(contentBox){
             contentBox.classList.remove(SHOWING_CN)
-            contentBox.classList.add(HIDING_CN)
+            contentBox.style.boxShadow = "none";
         })
+        contentBoxes[0].classList.add(HIDING_CN)
         setTimeout(function(){
             body.style.overflow = "hidden";
         }, 1500)
@@ -36,10 +38,11 @@ function handleClick(){
         contentLine.classList.remove(ZOOMOUT_LINE);
         content.classList.remove(HIDING_CON)
         content.classList.add(SHOWING_CON)
-        contentBoxes[0].classList.add(SHOWING_CN)
         contentBoxes[0].classList.remove(HIDING_CN)
+        contentBoxes[0].classList.add(SHOWING_CN)
         setTimeout(function(){
             body.style.overflow = "auto";
+            contentBoxes.forEach(box => box.style.boxShadow = boxshadow)
         }, 2000)
     }
 }

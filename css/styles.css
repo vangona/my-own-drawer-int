@@ -349,6 +349,7 @@ body::-webkit-scrollbar-thumb,
   line-height: 1.5rem;
   padding: 2rem 3rem;
   margin-bottom: 1rem;
+  transition: all 1s ease-in-out;
 }
 
 /* content */
@@ -400,10 +401,10 @@ body::-webkit-scrollbar-thumb,
 
   background-color: transparent;
   color: var(--gold);
-  caret-color: var(--dim-gold);
+  caret-color: transparent;
 
-  border: 1px solid transparent;
-  border-radius: 10px;
+  /* border: 1px solid transparent;
+  border-radius: 10px; */
   overflow: auto;
   outline: none;
   -webkit-box-shadow: none;
@@ -413,9 +414,9 @@ body::-webkit-scrollbar-thumb,
 }
 
 .header__question:focus {
-  border: 1px solid var(--dim-gold);
+  /* border: 1px solid var(--dim-gold);
   border-radius: 10px;
-  transition: border 0.5s ease-in-out;
+  transition: border 0.5s ease-in-out; */
 }
 
 .header__question::placeholder {
@@ -423,7 +424,7 @@ body::-webkit-scrollbar-thumb,
   vertical-align: center;
   font-family: "Nanum Myeongjo", serif;
   color: var(--gold);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
 }
 
@@ -451,6 +452,10 @@ body::-webkit-scrollbar-thumb,
   cursor: pointer;
 }
 
+.nav-box:active {
+  transform: scale(0.98) skewX(-10deg);
+}
+
 .content__line {
   display: none;
   margin-top: 0;
@@ -472,6 +477,8 @@ body::-webkit-scrollbar-thumb,
 .content__title {
   width: 100%;
   font-size: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin-top: 2rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -483,13 +490,75 @@ body::-webkit-scrollbar-thumb,
 
 .content__body {
   padding: 2rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 170%;
+  font-weight: 400;
+  word-break: keep-all;
+}
+
+.content__body p {
+  margin-bottom: 0.5rem;
+  padding: 0 0.3rem 1rem 0.3rem;
+}
+
+.content__body p:first-child {
+  text-indent: 0.5rem;
+}
+
+.text-indent-box {
+  text-indent: 0.3rem;
+}
+
+.explain__container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.explain__container p {
+  padding-top: 1rem;
+}
+
+.explain__container hr {
+  display: inline-block;
+  width: 100%;
+}
+
+.content__body .explain__title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.index__title {
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.index__body {
   font-weight: 400;
 }
 
-.content__body > p {
-  margin-bottom: 1rem;
+.align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content__body .content__img {
+  max-width: 50%;
+  max-height: auto;
+  margin: 1rem 0;
+}
+
+.link {
+  margin-right: 5px;
+  font-style: italic;
 }
 
 .button__container {
@@ -499,6 +568,10 @@ body::-webkit-scrollbar-thumb,
   width: fit-content;
   bottom: 0;
   right: 0;
+}
+
+.button__container button:active {
+  transform: scale(0.98);
 }
 
 .button__scroll {
@@ -529,6 +602,10 @@ body::-webkit-scrollbar-thumb,
     font-size: 2.3rem;
   }
 
+  .content__body .content__img {
+    max-width: 100%;
+  }
+
   .button__scroll {
     font-size: 1.1rem;
   }
@@ -539,11 +616,81 @@ body::-webkit-scrollbar-thumb,
     font-size: 12px;
   }
 
+  .header__box {
+    padding: 0;
+  }
+
   .header__title {
     font-size: 2rem;
+    padding-top: 50px;
+    padding-bottom: 30px;
   }
 
   .button__scroll {
     font-size: 1rem;
+  }
+
+  .header__question__container {
+    width: 100%;
+  }
+
+  .header__question {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+
+  .header__question::placeholder {
+    font-size: 1rem;
+  }
+
+  .main__content {
+    margin-top: 0;
+  }
+
+  .content__container {
+    display: none;
+    padding: 2rem 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content__title {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 20px;
+  }
+
+  .content__body {
+    font-size: 0.9rem;
+    word-break: keep-all;
+    letter-spacing: 0.15rem;
+    line-height: 1.5rem;
+    padding: 0;
+  }
+
+  .content__body br {
+    display: none;
+  }
+
+  .content__body .explain__title {
+    font-size: 1rem;
+  }
+
+  .explain__container p br {
+    display: inline;
+  }
+
+  .nav__container {
+    transform: translateX(4px);
+  }
+
+  .nav-box {
+    font-size: 0.7rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .zoom-out {
+    animation-delay: 0;
   }
 }

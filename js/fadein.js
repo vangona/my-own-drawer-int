@@ -13,39 +13,40 @@ function handleNavClick(navEvent) {
     if (content.classList.contains(SHOWING_CON)) {
         if (navEvent.target.classList.contains(SHOWING_CN)){
         } else {
-            if (navEvent.target.classList.contains("nav__answer")){
+            // if (navEvent.target.classList.contains("nav__answer")){
+            //     concept.classList.remove(SHOWING_CN)
+            //     explain.classList.remove(SHOWING_CN)
+            //     career.classList.remove(SHOWING_CN)
+            //     summary.classList.remove(SHOWING_CN)
+            //     answer.classList.add(SHOWING_CN)
+            //     window.scrollTo({top:answer.offsetTop -vh, behavior:'smooth'});
+            // } 
+            if (navEvent.target.classList.contains("nav__summary")){
                 concept.classList.remove(SHOWING_CN)
                 explain.classList.remove(SHOWING_CN)
                 career.classList.remove(SHOWING_CN)
-                summary.classList.remove(SHOWING_CN)
-                answer.classList.add(SHOWING_CN)
-                window.scrollTo({top:answer.offsetTop -vh, behavior:'smooth'});
-            } else if (navEvent.target.classList.contains("nav__summary")){
-                concept.classList.remove(SHOWING_CN)
-                explain.classList.remove(SHOWING_CN)
-                career.classList.remove(SHOWING_CN)
-                answer.classList.remove(SHOWING_CN)
+                // answer.classList.remove(SHOWING_CN)
                 summary.classList.add(SHOWING_CN)
                 window.scrollTo({top:summary.offsetTop -vh, behavior:'smooth'});
             } else if (navEvent.target.classList.contains("nav__concept")){
                 explain.classList.remove(SHOWING_CN)
                 career.classList.remove(SHOWING_CN)
                 summary.classList.remove(SHOWING_CN)
-                answer.classList.remove(SHOWING_CN)
+                // answer.classList.remove(SHOWING_CN)
                 concept.classList.add(SHOWING_CN)
                 window.scrollTo({top:concept.offsetTop -vh, behavior:'smooth'});
             } else if (navEvent.target.classList.contains("nav__explain")){
                 career.classList.remove(SHOWING_CN)
                 summary.classList.remove(SHOWING_CN)
                 concept.classList.remove(SHOWING_CN)
-                answer.classList.remove(SHOWING_CN)
+                // answer.classList.remove(SHOWING_CN)
                 explain.classList.add(SHOWING_CN)
                 window.scrollTo({top:explain.offsetTop -vh, behavior:'smooth'});
             } else if (navEvent.target.classList.contains("nav__career")){
                 summary.classList.remove(SHOWING_CN)
                 concept.classList.remove(SHOWING_CN)
                 explain.classList.remove(SHOWING_CN)
-                answer.classList.remove(SHOWING_CN)
+                // answer.classList.remove(SHOWING_CN)
                 career.classList.add(SHOWING_CN)
                 window.scrollTo({top:career.offsetTop -vh, behavior:'smooth'});
             }
