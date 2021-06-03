@@ -614,7 +614,14 @@ footer hr {
 }
 
 .footer-box p {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
+}
+
+.footer-box p a {
+  margin-top: 1rem;
+  font-size: 2rem;
 }
 
 /* mobile */
