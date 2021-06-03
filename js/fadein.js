@@ -9,6 +9,14 @@ career = document.getElementById("career").parentNode;
 
 let vh = 0.01 * window.innerHeight;    
 
+function isMobile(){
+	if (userAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || userAgent.match(/LG|SAMSUNG|Samsung/) != null){
+		return true;
+    } else{
+		return false;
+	}
+}
+
 function handleNavClick(navEvent) {
     if (content.classList.contains(SHOWING_CON)) {
         if (navEvent.target.classList.contains(SHOWING_CN)){
@@ -27,28 +35,44 @@ function handleNavClick(navEvent) {
                 career.classList.remove(SHOWING_CN)
                 // answer.classList.remove(SHOWING_CN)
                 summary.classList.add(SHOWING_CN)
-                window.scrollTo({top:summary.offsetTop -vh, behavior:'smooth'});
+                if (isMobile()){
+                    window.scrollTo({top:summary.offsetTop -vh -30, behavior:'smooth'});
+                } else {
+                    window.scrollTo({top:summary.offsetTop -vh -120, behavior:'smooth'});
+                }
             } else if (navEvent.target.classList.contains("nav__concept")){
                 explain.classList.remove(SHOWING_CN)
                 career.classList.remove(SHOWING_CN)
                 summary.classList.remove(SHOWING_CN)
                 // answer.classList.remove(SHOWING_CN)
                 concept.classList.add(SHOWING_CN)
-                window.scrollTo({top:concept.offsetTop -vh, behavior:'smooth'});
+                if (isMobile()){
+                    window.scrollTo({top:concept.offsetTop -vh -30, behavior:'smooth'});
+                } else {
+                    window.scrollTo({top:concept.offsetTop -vh -120, behavior:'smooth'});
+                }
             } else if (navEvent.target.classList.contains("nav__explain")){
                 career.classList.remove(SHOWING_CN)
                 summary.classList.remove(SHOWING_CN)
                 concept.classList.remove(SHOWING_CN)
                 // answer.classList.remove(SHOWING_CN)
                 explain.classList.add(SHOWING_CN)
-                window.scrollTo({top:explain.offsetTop -vh, behavior:'smooth'});
+                if (isMobile()){
+                    window.scrollTo({top:explain.offsetTop -vh -30, behavior:'smooth'});
+                } else {
+                    window.scrollTo({top:explain.offsetTop -vh -120, behavior:'smooth'});
+                }
             } else if (navEvent.target.classList.contains("nav__career")){
                 summary.classList.remove(SHOWING_CN)
                 concept.classList.remove(SHOWING_CN)
                 explain.classList.remove(SHOWING_CN)
                 // answer.classList.remove(SHOWING_CN)
                 career.classList.add(SHOWING_CN)
-                window.scrollTo({top:career.offsetTop -vh, behavior:'smooth'});
+                if (isMobile()){
+                    window.scrollTo({top:career.offsetTop -vh -30, behavior:'smooth'});
+                } else {
+                    window.scrollTo({top:career.offsetTop -vh -120, behavior:'smooth'});
+                }
             }
         }
     } 
@@ -64,17 +88,25 @@ function handleLeftArrow(event) {
     if (clickedLeftArrow != contentBoxes[0]) {
         clickedLeftArrow.classList.remove(SHOWING_CN)
         previousElement.classList.add(SHOWING_CN)
-        window.scrollTo({top:previousElement.offsetTop -vh, behavior:'auto'});
+        if (isMobile()){
+            window.scrollTo({top:previousElement.offsetTop -vh -30, behavior:'smooth'});
+        } else {
+            window.scrollTo({top:previousElement.offsetTop -vh -120, behavior:'smooth'});
+        }
     }
 }
 
 function handleRightArrow(event) {
     const clickedRightArrow = event.target.parentNode.parentNode;
-    const NextElement = clickedRightArrow.nextElementSibling
+    const nextElement = clickedRightArrow.nextElementSibling
     if (clickedRightArrow != contentBoxes[contentBoxes.length - 1]) {
         clickedRightArrow.classList.remove(SHOWING_CN)
-        NextElement.classList.add(SHOWING_CN)
-        window.scrollTo({top:NextElement.offsetTop -vh, behavior:'auto'});
+        nextElement.classList.add(SHOWING_CN)
+        if (isMobile()){
+            window.scrollTo({top:nextElement.offsetTop -vh -30, behavior:'smooth'});
+        } else {
+            window.scrollTo({top:nextElement.offsetTop -vh -120, behavior:'smooth'});
+        }
     }
 }
 
