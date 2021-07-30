@@ -484,6 +484,12 @@ body::-webkit-scrollbar-thumb,
   text-align: center;
 }
 
+.main__title {
+  font-family: serif;
+  margin: 5rem 0 3rem 0;
+  font-size: 2rem;
+}
+
 .content__title:hover {
   cursor: pointer;
 }
